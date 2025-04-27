@@ -41,17 +41,6 @@ participants:
     vc_max_mem: 0
     validator_count: null
     use_remote_signer: false
-# Remote signer
-    remote_signer_type: web3signer
-    remote_signer_image: consensys/web3signer:latest
-    remote_signer_extra_env_vars: {}
-    remote_signer_extra_labels: {}
-    remote_signer_extra_params: []
-    remote_signer_tolerations: []
-    remote_signer_min_cpu: 0
-    remote_signer_max_cpu: 0
-    remote_signer_min_mem: 0
-    remote_signer_max_mem: 0
 # participant specific
     node_selectors: {}
     tolerations: []
@@ -66,6 +55,19 @@ participants:
     blobber_extra_params: []
     builder_network_params: null
     keymanager_enabled: false
+  - vc_type: prysm
+    vc_image: prysm-custom-validator 
+    vc_log_level: ""
+    vc_extra_env_vars: {}
+    vc_extra_labels: {}
+    vc_extra_params: ["--builder-delay-time=400"]
+    vc_tolerations: []
+    vc_min_cpu: 0
+    vc_max_cpu: 0
+    vc_min_mem: 0
+    vc_max_mem: 0
+    validator_count: null
+    use_remote_signer: false
 network_params:
   network: kurtosis
   network_id: "3151908"
